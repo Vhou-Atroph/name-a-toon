@@ -1,7 +1,7 @@
 from enum import Enum
 import random
 
-import regex
+from .regex import NameList
 
 class NameType(Enum):
     """The types of name that a Toon could have."""
@@ -31,7 +31,7 @@ class Name:
         else:
             self.last2 = last2
     
-    def random(list):
+    def random(list:NameList):
         """Generate a completely random name from a given list."""
         type = random.choice([NameType.FULL,NameType.FIRST,NameType.FIRSTLAST,NameType.LAST,NameType.TITLEFIRST,NameType.TITLELAST])
         return Name(type,
